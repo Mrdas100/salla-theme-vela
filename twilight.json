@@ -4,7 +4,7 @@
         "en": "VELA"
     },
     "repository": "https://github.com/Mrdas100/salla-theme-vela",
-    "author_email": "themes@example.com",
+    "author_email": "mmrdas100@gmail.com",
     "features": [
         "mega-menu",
         "fonts",
@@ -1342,7 +1342,7 @@
             ]
         }
     ],
-    "support_url": "https://example.com/vela-support",
+    "support_url": "https://github.com/Mrdas100/salla-theme-vela/issues",
     "description": {
         "ar": "ثيم عربي أولًا للأزياء والرياضة، يجمع السرد البصري مع تجربة شراء سريعة وقابلة للتخصيص.",
         "en": "An Arabic-first fashion and sports theme pairing editorial storytelling with fast, configurable commerce."
