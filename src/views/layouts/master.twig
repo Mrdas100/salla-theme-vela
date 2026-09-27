@@ -75,12 +75,28 @@
         window.enable_add_product_toast = "{{ theme.settings.get('enable_add_product_toast', true) }}"
         window.notify_when_available_in_card = "{{ theme.settings.get('notify_when_available_in_card', true) }}"
         window.vela_quick_view = {{ theme.settings.get('vela_quick_view', true) | json_encode }}
+        window.vela_dark_mode_enabled = {{ theme.settings.get('vela_dark_mode_enabled', true) | json_encode }}
         window.vela_i18n = {
             quickView: {{ trans('vela.quick_view') | json_encode }},
             close: {{ trans('vela.close') | json_encode }},
-            viewDetails: {{ trans('vela.view_details') | json_encode }}
+            viewDetails: {{ trans('vela.view_details') | json_encode }},
+            darkMode: {{ trans('vela.dark_mode') | json_encode }},
+            lightMode: {{ trans('vela.light_mode') | json_encode }}
         }
     </script>
+    {% if theme.settings.get('vela_dark_mode_enabled', true) %}
+      <script>
+        (() => {
+          const fallback = {{ theme.settings.get('vela_color_mode_default', 'system') | json_encode }};
+          let selected = fallback;
+          try { selected = localStorage.getItem('vela:color-mode') || fallback; } catch (error) {}
+          const resolved = selected === 'system'
+            ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+            : selected;
+          document.documentElement.dataset.velaTheme = resolved;
+        })();
+      </script>
+    {% endif %}
     
     {% hook 'head:start' %}
     {% hook head %}
@@ -100,6 +116,10 @@
             --s-radius: .75rem;
             --vela-signal: {{ theme.settings.get('vela_accent_color', '#C8FF2E') }};
             --vela-paper: {{ theme.settings.get('vela_surface_color', '#F5F3EE') }};
+            --vela-surface: {{ theme.settings.get('vela_background_color', '#FFFFFF') }};
+            --vela-dark-background: {{ theme.settings.get('vela_dark_background_color', '#0D0F0C') }};
+            --vela-dark-surface: {{ theme.settings.get('vela_dark_surface_color', '#171A16') }};
+            --vela-dark-text: {{ theme.settings.get('vela_dark_text_color', '#F5F3EE') }};
             --vela-radius: {{ theme.settings.get('vela_radius', 'soft') == 'square' ? '0px' : (theme.settings.get('vela_radius', 'soft') == 'rounded' ? '24px' : '14px') }};
             --vela-content: {{ theme.settings.get('vela_content_width', 'standard') == 'compact' ? '1120px' : (theme.settings.get('vela_content_width', 'standard') == 'wide' ? '1440px' : '1280px') }};
             --vela-section-space: {{ theme.settings.get('vela_section_spacing', 'comfortable') == 'compact' ? 'clamp(2.5rem, 5vw, 4rem)' : (theme.settings.get('vela_section_spacing', 'comfortable') == 'airy' ? 'clamp(5rem, 10vw, 9rem)' : 'clamp(3.5rem, 8vw, 7rem)') }};

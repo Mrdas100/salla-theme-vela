@@ -6,10 +6,18 @@
 {% set secondary_label = component.secondary_label is iterable ? component.secondary_label[language.code]|default(component.secondary_label|first) : component.secondary_label %}
 
 <section component-id="{{ componentId }}" class="vela-hero vela-hero--{{ component.alignment|default('start') }}" aria-labelledby="vela-hero-title-{{ position }}">
-  <picture class="vela-hero__media">
-    {% if component.mobile_image %}<source media="(max-width: 639px)" srcset="{{ component.mobile_image }}">{% endif %}
-    <img src="{{ component.image }}" alt="{{ component.image_alt|default(title)|e('html_attr') }}" width="1600" height="900" fetchpriority="high">
-  </picture>
+  {% if component.media_type == 'video' and component.video_url %}
+    <video class="vela-hero__media" data-vela-media-video muted loop autoplay playsinline preload="metadata" poster="{{ component.image }}" aria-hidden="true">
+      {% if component.mobile_video_url %}<source media="(max-width: 639px)" src="{{ component.mobile_video_url }}" type="video/mp4">{% endif %}
+      <source src="{{ component.video_url }}" type="video/mp4">
+      {% if component.image %}<img src="{{ component.image }}" alt="" width="1600" height="900" fetchpriority="high">{% endif %}
+    </video>
+  {% elseif component.image %}
+    <picture class="vela-hero__media">
+      {% if component.mobile_image %}<source media="(max-width: 639px)" srcset="{{ component.mobile_image }}">{% endif %}
+      <img src="{{ component.image }}" alt="{{ component.image_alt|default(title)|e('html_attr') }}" width="1600" height="900" fetchpriority="high">
+    </picture>
+  {% endif %}
   <div class="vela-hero__overlay" style="--vela-overlay: {{ component.overlay|default(45) / 100 }}"></div>
   <div class="container vela-hero__inner">
     <div class="vela-hero__content">
@@ -23,4 +31,3 @@
     </div>
   </div>
 </section>
-

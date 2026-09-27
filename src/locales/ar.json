@@ -31,7 +31,9 @@
     "limited_drop": "إصدار محدود",
     "need_help": "نحن هنا للمساعدة",
     "recently_viewed": "شاهدتها مؤخرًا",
-    "complete_the_look": "أكمل الإطلالة"
+    "complete_the_look": "أكمل الإطلالة",
+    "dark_mode": "تفعيل الوضع الداكن",
+    "light_mode": "تفعيل الوضع الفاتح"
   },
   "common": {
     "bank_offer_sub_title_multiple": "ادفع قيمة مشترياتك عبر أحد البطاقات البنكة التالية واحصل على الخصم المحدد",

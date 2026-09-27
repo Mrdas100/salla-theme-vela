@@ -74,6 +74,11 @@
                       <custom-main-menu></custom-main-menu>
                   </div>
                   <div class="flex items-center justify-end my-2.5">
+                      {% if theme.settings.get('vela_dark_mode_enabled', true) %}
+                        <button type="button" class="vela-theme-toggle" data-vela-theme-toggle aria-label="{{ trans('vela.dark_mode') }}" aria-pressed="false">
+                          <i class="sicon-moon" data-vela-theme-icon aria-hidden="true"></i>
+                        </button>
+                      {% endif %}
                       <salla-user-menu data-testid="store-header-user-menu" avatar-only show-header show-trigger></salla-user-menu>
                       <salla-cart-summary data-testid="store-header-cart" class="ml-4 rtl:ml-[unset] rtl:mr-4">
                         <i slot="icon" class="header-btn__icon icon sicon-shopping-bag"></i>

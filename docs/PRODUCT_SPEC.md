@@ -68,7 +68,8 @@ The memorable visual device is the **Drop Rail**: a high-contrast campaign strip
 
 ### Home merchandising
 
-- **Drop Hero:** image, eyebrow, title, body, primary/secondary calls to action, alignment, overlay strength.
+- **Media Hero:** responsive image or direct MP4 video, poster/mobile media, eyebrow, title, body, primary/secondary calls to action, alignment, overlay strength.
+- **Brand Story:** image/video, editorial copy, CTA, reversible layout, and up to three trust metrics.
 - **Flash Sale:** title, supporting text, end date, selected products, optional “view all”.
 - **Lookbook Mosaic:** two to four linked editorial banners with independent focal images and copy.
 - Product sliders and fixed grids for latest, featured, best-selling, discounted, or merchant-selected items.
@@ -98,6 +99,7 @@ The memorable visual device is the **Drop Rail**: a high-contrast campaign strip
 - Content width: compact / standard / wide.
 - Section spacing: compact / comfortable / airy.
 - Motion: enabled / reduced.
+- Full dark/light mode: customer toggle, saved preference, system default, and independent merchant colors.
 
 ### Header and footer
 
@@ -165,6 +167,7 @@ The memorable visual device is the **Drop Rail**: a high-contrast campaign strip
 - Current official Theme Raed/Twilight base.
 - VELA product identity, design tokens, layout treatment, and documentation.
 - Drop Hero, Flash Sale, Lookbook Mosaic, and FAQ components.
+- Media Hero video support, Brand Story, styled product tabs, and full dark/light color modes.
 - Header/footer, category, product, and card visual system.
 - Quick View, recently viewed foundation, sticky add-to-cart, related products.
 - Arabic/English custom strings.
@@ -181,6 +184,8 @@ The memorable visual device is the **Drop Rail**: a high-contrast campaign strip
 ### Phase 2 — Commercial hardening
 
 - Create component preview images and merchant onboarding presets.
+- Replace every inherited Raed preview image with original VELA screenshots before submission.
+- Add Media Hero, product tabs, brand story, and full dark/light color modes based on the competitive gap review.
 - Add visual regression baselines for common viewports.
 - Run large-catalog and slow-network tests.
 - Complete theme-store listing assets, privacy/support pages, versioning, and changelog.
@@ -204,3 +209,6 @@ The memorable visual device is the **Drop Rail**: a high-contrast campaign strip
 - Shipping heavy page-builder animation.
 - Claiming live-store compatibility before Partners preview testing is completed.
 
+## 14. Competitive benchmark
+
+The current reference benchmark is Salla theme “Aali”. VELA will match the commercial expectation of a broad, image-led component library while remaining distinct through its fashion/sports specialization, editorial Drop Rail, Quick View, Recently Viewed, and conversion-focused product experience. The detailed audit and roadmap are maintained in `docs/COMPETITIVE_REVIEW_AALI.md`.

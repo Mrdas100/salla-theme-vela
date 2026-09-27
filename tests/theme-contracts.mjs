@@ -35,7 +35,7 @@ for (const component of theme.components) {
   assert.ok(existsSync(resolve(root, twig)), `Missing template for ${component.path}: ${twig}`);
 }
 
-['home.drop-hero', 'home.flash-sale', 'home.lookbook', 'home.faq'].forEach(path => {
+['home.drop-hero', 'home.brand-story', 'home.flash-sale', 'home.lookbook', 'home.faq'].forEach(path => {
   assert.ok(componentPaths.has(path), `Missing VELA component schema: ${path}`);
 });
 
@@ -46,6 +46,10 @@ assert.deepEqual(Object.keys(ar.vela).sort(), Object.keys(en.vela).sort(), 'VELA
 const master = read('src/views/layouts/master.twig');
 assert.match(master, /class="vela-skip-link"/);
 assert.match(master, /id="main-content"/);
+assert.match(master, /vela:color-mode/);
+
+const header = read('src/views/components/header/header.twig');
+assert.match(header, /data-vela-theme-toggle/);
 
 const quickView = read('src/assets/js/partials/product-card.js');
 assert.match(quickView, /role="dialog"/);
@@ -54,6 +58,6 @@ assert.match(quickView, /aria-modal="true"/);
 const styles = read('src/assets/styles/06-vela/vela.scss');
 assert.match(styles, /prefers-reduced-motion:\s*reduce/);
 assert.match(styles, /:focus-visible/);
+assert.match(styles, /data-vela-theme="dark"/);
 
 console.log(`✓ VELA theme contracts passed (${theme.components.length} custom components)`);
-

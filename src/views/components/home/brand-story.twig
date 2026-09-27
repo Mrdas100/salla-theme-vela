@@ -1,0 +1,31 @@
+{% set eyebrow = component.eyebrow is iterable ? component.eyebrow[language.code]|default(component.eyebrow|first) : component.eyebrow %}
+{% set title = component.title is iterable ? component.title[language.code]|default(component.title|first) : component.title %}
+{% set description = component.description is iterable ? component.description[language.code]|default(component.description|first) : component.description %}
+{% set button_label = component.button_label is iterable ? component.button_label[language.code]|default(component.button_label|first) : component.button_label %}
+
+<section component-id="{{ componentId }}" class="s-block container vela-story{{ component.reverse ? ' vela-story--reverse' : '' }}" aria-labelledby="vela-story-title-{{ position }}">
+  <div class="vela-story__media">
+    {% if component.media_type == 'video' and component.video_url %}
+      <video data-vela-media-video muted loop autoplay playsinline preload="metadata" poster="{{ component.image }}" aria-hidden="true">
+        <source src="{{ component.video_url }}" type="video/mp4">
+        {% if component.image %}<img src="{{ component.image }}" alt="" width="900" height="1100" loading="lazy">{% endif %}
+      </video>
+    {% elseif component.image %}
+      <img src="{{ component.image }}" alt="{{ component.image_alt|default(title)|e('html_attr') }}" width="900" height="1100" loading="lazy">
+    {% endif %}
+  </div>
+  <div class="vela-story__content">
+    {% if eyebrow %}<p class="vela-eyebrow">{{ eyebrow }}</p>{% endif %}
+    <h2 id="vela-story-title-{{ position }}">{{ title }}</h2>
+    <div class="vela-story__description">{{ description }}</div>
+    {% if component.stats|length %}
+      <dl class="vela-story__stats">
+        {% for stat in component.stats %}
+          {% set stat_label = stat.label is iterable ? stat.label[language.code]|default(stat.label|first) : stat.label %}
+          <div><dt>{{ stat_label }}</dt><dd>{{ stat.value }}</dd></div>
+        {% endfor %}
+      </dl>
+    {% endif %}
+    {% if component.button_url and button_label %}<a class="vela-button vela-button--solid" href="{{ component.button_url }}">{{ button_label }}</a>{% endif %}
+  </div>
+</section>

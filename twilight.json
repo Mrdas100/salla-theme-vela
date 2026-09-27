@@ -50,6 +50,67 @@
             "required": true
         },
         {
+            "id": "vela_background_color",
+            "type": "string",
+            "format": "color",
+            "label": "لون خلفية المتجر",
+            "value": "#FFFFFF",
+            "required": true
+        },
+        {
+            "type": "static",
+            "format": "title",
+            "id": "vela-dark-title",
+            "value": "<div style='background:#111310;color:#fff;padding:16px;border-radius:12px'><strong>VELA — الوضع الداكن</strong><small style='display:block;margin-top:6px;opacity:.72'>ألوان مستقلة مع حفظ اختيار العميل</small></div>",
+            "variant": "h6"
+        },
+        {
+            "id": "vela_dark_mode_enabled",
+            "type": "boolean",
+            "format": "switch",
+            "label": "إظهار زر الوضع الداكن والفاتح",
+            "value": true,
+            "selected": true
+        },
+        {
+            "id": "vela_color_mode_default",
+            "type": "items",
+            "format": "dropdown-list",
+            "label": "الوضع الافتراضي",
+            "source": "Manual",
+            "required": true,
+            "selected": [{"label": "حسب جهاز العميل", "value": "system", "key": "e6537a04-d81a-45b9-9b75-c6224d4140d7"}],
+            "options": [
+                {"label": "حسب جهاز العميل", "value": "system", "key": "e6537a04-d81a-45b9-9b75-c6224d4140d7"},
+                {"label": "فاتح", "value": "light", "key": "96010344-09f8-4cdd-9e03-4c26e43db17f"},
+                {"label": "داكن", "value": "dark", "key": "90d9b9df-bab5-43b3-b271-f9bb435309ff"}
+            ]
+        },
+        {
+            "id": "vela_dark_background_color",
+            "type": "string",
+            "format": "color",
+            "label": "الخلفية الداكنة",
+            "value": "#0D0F0C",
+            "required": true
+        },
+        {
+            "id": "vela_dark_surface_color",
+            "type": "string",
+            "format": "color",
+            "label": "سطح البطاقات في الوضع الداكن",
+            "value": "#171A16",
+            "required": true
+        },
+        {
+            "id": "vela_dark_text_color",
+            "type": "string",
+            "format": "color",
+            "label": "النص في الوضع الداكن",
+            "value": "#F5F3EE",
+            "required": true
+        },
+        {
             "id": "vela_radius",
             "type": "items",
             "format": "dropdown-list",
@@ -1265,13 +1326,23 @@
         },
         {
             "key": "e8fd82e1-d8bb-495d-91c0-ddb9bbc7bddc",
-            "title": {"ar": "واجهة الإصدار — VELA", "en": "VELA Drop Hero"},
+            "title": {"ar": "واجهة صورة أو فيديو — VELA", "en": "VELA Media Hero"},
             "icon": "sicon-image-carousel",
             "path": "home.drop-hero",
             "is_default": true,
             "fields": [
-                {"id": "image", "type": "string", "format": "image", "label": "صورة سطح المكتب", "description": "المقاس المقترح 1600×900", "required": true},
+                {
+                    "id": "media_type", "type": "items", "format": "dropdown-list", "label": "نوع الواجهة", "source": "Manual", "required": true,
+                    "selected": [{"label": "صورة", "value": "image", "key": "9110bb66-48b5-4938-9cb8-c0a677570f15"}],
+                    "options": [
+                        {"label": "صورة", "value": "image", "key": "9110bb66-48b5-4938-9cb8-c0a677570f15"},
+                        {"label": "فيديو مباشر MP4", "value": "video", "key": "a8376fba-b320-4e56-9a04-891b6771d98f"}
+                    ]
+                },
+                {"id": "image", "type": "string", "format": "image", "label": "صورة سطح المكتب أو غلاف الفيديو", "description": "المقاس المقترح 1600×900", "required": false},
                 {"id": "mobile_image", "type": "string", "format": "image", "label": "صورة الجوال", "description": "المقاس المقترح 750×1100", "required": false},
+                {"id": "video_url", "type": "string", "format": "text", "label": "رابط فيديو MP4 لسطح المكتب", "description": "استخدم ملفًا مضغوطًا وصامتًا قدر الإمكان", "required": false},
+                {"id": "mobile_video_url", "type": "string", "format": "text", "label": "رابط فيديو MP4 للجوال", "description": "اختياري؛ يستخدم فيديو سطح المكتب عند تركه فارغًا", "required": false},
                 {"id": "image_alt", "type": "string", "format": "text", "label": "وصف الصورة لقارئ الشاشة", "required": false, "maxLength": 160},
                 {"id": "eyebrow", "type": "string", "format": "text", "label": "النص العلوي", "multilanguage": true, "required": false, "maxLength": 50},
                 {"id": "title", "type": "string", "format": "text", "label": "العنوان", "multilanguage": true, "required": true, "maxLength": 90},
@@ -1287,6 +1358,38 @@
                     "options": [
                         {"label": "البداية", "value": "start", "key": "decb29af-5b7f-442b-b2d4-0d488ef7bd29"},
                         {"label": "المنتصف", "value": "center", "key": "7afdb4dc-29f4-473d-a364-fce94920da92"}
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "07b68168-a137-4264-a1e3-73019f7fdcc9",
+            "title": {"ar": "قصة العلامة — VELA", "en": "VELA Brand Story"},
+            "icon": "sicon-store",
+            "path": "home.brand-story",
+            "fields": [
+                {"id": "eyebrow", "type": "string", "format": "text", "label": "النص العلوي", "multilanguage": true, "required": false, "maxLength": 50},
+                {"id": "title", "type": "string", "format": "text", "label": "العنوان", "multilanguage": true, "required": true, "maxLength": 100},
+                {"id": "description", "type": "string", "format": "textarea", "label": "القصة", "multilanguage": true, "required": true, "maxLength": 700},
+                {
+                    "id": "media_type", "type": "items", "format": "dropdown-list", "label": "نوع الوسائط", "source": "Manual", "required": true,
+                    "selected": [{"label": "صورة", "value": "image", "key": "5beed52c-a084-45dd-bcff-0506d950d2d0"}],
+                    "options": [
+                        {"label": "صورة", "value": "image", "key": "5beed52c-a084-45dd-bcff-0506d950d2d0"},
+                        {"label": "فيديو مباشر MP4", "value": "video", "key": "8234290d-85dc-4c0d-b277-e5385e59803f"}
+                    ]
+                },
+                {"id": "image", "type": "string", "format": "image", "label": "الصورة أو غلاف الفيديو", "required": false},
+                {"id": "image_alt", "type": "string", "format": "text", "label": "وصف الصورة", "required": false, "maxLength": 160},
+                {"id": "video_url", "type": "string", "format": "text", "label": "رابط فيديو MP4", "required": false},
+                {"id": "button_label", "type": "string", "format": "text", "label": "نص الزر", "multilanguage": true, "required": false, "maxLength": 40},
+                {"id": "button_url", "type": "string", "format": "text", "label": "رابط الزر", "required": false},
+                {"id": "reverse", "type": "boolean", "format": "switch", "label": "عكس موضع الصورة والنص", "value": false, "selected": false},
+                {
+                    "id": "stats", "type": "collection", "format": "collection", "label": "أرقام الثقة", "item_label": "رقم", "required": false, "minLength": 0, "maxLength": 3,
+                    "fields": [
+                        {"id": "stats.value", "type": "string", "format": "text", "label": "القيمة", "required": true, "maxLength": 20},
+                        {"id": "stats.label", "type": "string", "format": "text", "label": "الوصف", "multilanguage": true, "required": true, "maxLength": 50}
                     ]
                 }
             ]

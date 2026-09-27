@@ -1,6 +1,7 @@
 /* VELA visual layer — isolated from the upstream Twilight baseline. */
 :root {
   --vela-ink: #111310;
+  --vela-campaign-ink: #111310;
   --vela-paper: #f5f3ee;
   --vela-signal: #c8ff2e;
   --vela-surface: #ffffff;
@@ -10,6 +11,16 @@
   --vela-section-space: clamp(3.5rem, 8vw, 7rem);
   --vela-content: 1280px;
   --vela-ease: cubic-bezier(.2, .75, .25, 1);
+  color-scheme: light;
+}
+
+:root[data-vela-theme="dark"] {
+  --vela-ink: var(--vela-dark-text, #f5f3ee);
+  --vela-paper: var(--vela-dark-surface, #171a16);
+  --vela-surface: var(--vela-dark-background, #0d0f0c);
+  --vela-muted: #afb4aa;
+  --vela-border: rgba(245, 243, 238, .16);
+  color-scheme: dark;
 }
 
 html {
@@ -21,6 +32,7 @@ body.theme-vela {
   color: var(--vela-ink);
   background: var(--vela-surface);
   text-rendering: optimizeLegibility;
+  transition: color 180ms var(--vela-ease), background-color 180ms var(--vela-ease);
 }
 
 .theme-vela .container {
@@ -77,8 +89,12 @@ body.theme-vela {
 
 .theme-vela .main-nav-container {
   border-block-end: 1px solid var(--vela-border);
+  color: var(--vela-ink);
+  background: var(--vela-surface) !important;
   box-shadow: none;
 }
+
+.theme-vela .main-nav-container .inner { background: inherit !important; }
 
 .theme-vela .navbar-brand img {
   max-height: 3.25rem;
@@ -92,6 +108,22 @@ body.theme-vela {
   border-radius: var(--vela-radius);
 }
 
+.vela-theme-toggle {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  margin-inline-end: .25rem;
+  border: 1px solid var(--vela-border);
+  border-radius: 999px;
+  color: var(--vela-ink);
+  background: var(--vela-paper);
+  transition: transform 180ms var(--vela-ease), color 180ms var(--vela-ease), background-color 180ms var(--vela-ease);
+}
+
+.vela-theme-toggle:hover { transform: rotate(8deg); }
+.vela-theme-toggle i { font-size: 1.1rem; }
+
 /* Hero */
 .vela-hero {
   position: relative;
@@ -99,7 +131,7 @@ body.theme-vela {
   display: grid;
   overflow: hidden;
   color: #fff;
-  background: var(--vela-ink);
+  background: var(--vela-campaign-ink);
   isolation: isolate;
 }
 
@@ -109,7 +141,9 @@ body.theme-vela {
   inset: 0;
 }
 
-.vela-hero__media img {
+.vela-hero__media,
+.vela-hero__media img,
+.vela-hero__media video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -187,7 +221,7 @@ body.theme-vela {
   padding: clamp(1rem, 3vw, 2rem);
   border-radius: var(--vela-radius);
   color: #fff;
-  background: var(--vela-ink);
+  background: var(--vela-campaign-ink);
   overflow: hidden;
 }
 
@@ -216,7 +250,7 @@ body.theme-vela {
   border-radius: var(--vela-radius);
   overflow: hidden;
   color: #fff;
-  background: var(--vela-ink);
+  background: var(--vela-campaign-ink);
 }
 
 .vela-lookbook__item:nth-child(3n) { grid-column: span 12; min-height: clamp(18rem, 35vw, 32rem); }
@@ -225,6 +259,52 @@ body.theme-vela {
 .vela-lookbook__shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.72), transparent 55%); }
 .vela-lookbook__copy { position: absolute; inset-inline: 1.5rem; inset-block-end: 1.5rem; display: grid; gap: .25rem; }
 .vela-lookbook__copy strong { font-size: clamp(1.5rem, 3vw, 2.6rem); font-weight: 900; }
+
+/* Brand story */
+.vela-story {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  min-height: clamp(34rem, 60vw, 48rem);
+  border: 1px solid var(--vela-border);
+  border-radius: var(--vela-radius);
+  background: var(--vela-paper);
+  overflow: hidden;
+}
+
+.vela-story--reverse .vela-story__media { order: 2; }
+.vela-story__media { min-height: 30rem; background: var(--vela-campaign-ink); overflow: hidden; }
+.vela-story__media img,
+.vela-story__media video { width: 100%; height: 100%; object-fit: cover; }
+.vela-story__content { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: clamp(2rem, 6vw, 6rem); }
+.vela-story__content h2 { max-width: 13ch; font-size: clamp(2.25rem, 5vw, 5rem); font-weight: 900; line-height: .98; letter-spacing: -.055em; }
+.vela-story__description { max-width: 56ch; margin-block-start: 1.5rem; color: var(--vela-muted); font-size: 1.05rem; line-height: 1.9; }
+.vela-story__stats { width: 100%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-block: 2rem; padding-block: 1.5rem; border-block: 1px solid var(--vela-border); }
+.vela-story__stats div { display: flex; flex-direction: column-reverse; gap: .3rem; }
+.vela-story__stats dt { color: var(--vela-muted); font-size: .8rem; }
+.vela-story__stats dd { font-size: clamp(1.35rem, 3vw, 2rem); font-weight: 900; }
+.vela-button--solid { border-color: var(--vela-ink); color: var(--vela-surface); background: var(--vela-ink); }
+
+/* Product tabs — inherited Twilight capability, expressed in VELA's visual language. */
+.theme-vela .s-block-tabs .tabs {
+  display: flex;
+  gap: .5rem;
+  padding: .35rem;
+  border: 1px solid var(--vela-border);
+  border-radius: calc(var(--vela-radius) + 8px);
+  background: var(--vela-paper);
+}
+
+.theme-vela .s-block-tabs .tab-trigger {
+  min-height: 2.75rem;
+  padding-inline: 1rem;
+  border-radius: var(--vela-radius);
+  color: var(--vela-muted);
+}
+
+.theme-vela .s-block-tabs .tab-trigger.is-active {
+  color: var(--vela-surface);
+  background: var(--vela-ink);
+}
 
 /* FAQ */
 .vela-faq {
@@ -249,6 +329,8 @@ body.theme-vela {
   border: 1px solid var(--vela-border);
   border-radius: var(--vela-radius);
   box-shadow: none;
+  color: var(--vela-ink);
+  background: var(--vela-surface);
   overflow: hidden;
 }
 
@@ -268,7 +350,7 @@ body.theme-vela {
   border: 1px solid var(--vela-border);
   border-radius: 999px;
   color: var(--vela-ink);
-  background: rgba(255, 255, 255, .92);
+  background: color-mix(in srgb, var(--vela-surface) 92%, transparent);
   backdrop-filter: blur(8px);
 }
 
@@ -301,7 +383,7 @@ body.theme-vela {
   border-radius: var(--vela-radius);
   overflow: hidden;
   color: #fff;
-  background: var(--vela-ink);
+  background: var(--vela-campaign-ink);
 }
 
 .vela-category-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -318,7 +400,21 @@ body.theme-vela {
 /* Footer */
 .theme-vela .store-footer { margin-block-start: var(--vela-section-space); }
 .theme-vela .store-footer__inner { padding-block: clamp(3rem, 7vw, 6rem); }
-.theme-vela.footer-is-dark .store-footer__inner { background: var(--vela-ink); }
+.theme-vela.footer-is-dark .store-footer__inner { color: #fff; background: var(--vela-campaign-ink); }
+
+/* Full color-mode surface coverage. */
+:root[data-vela-theme="dark"] .theme-vela .bg-white,
+:root[data-vela-theme="dark"] .theme-vela .bg-gray-100,
+:root[data-vela-theme="dark"] .theme-vela .bg-gray-50 { background-color: var(--vela-paper) !important; }
+:root[data-vela-theme="dark"] .theme-vela .text-dark,
+:root[data-vela-theme="dark"] .theme-vela .text-gray-800,
+:root[data-vela-theme="dark"] .theme-vela .text-gray-700 { color: var(--vela-ink) !important; }
+:root[data-vela-theme="dark"] .theme-vela .text-gray-500,
+:root[data-vela-theme="dark"] .theme-vela .text-gray-400 { color: var(--vela-muted) !important; }
+:root[data-vela-theme="dark"] .theme-vela .border-gray-100,
+:root[data-vela-theme="dark"] .theme-vela .border-gray-200,
+:root[data-vela-theme="dark"] .theme-vela .border-border-color { border-color: var(--vela-border) !important; }
+:root[data-vela-theme="dark"] .theme-vela .store-footer__inner { color: var(--vela-ink); background: var(--vela-paper); }
 
 @media (max-width: 767px) {
   .vela-hero { min-height: 38rem; }
@@ -327,6 +423,11 @@ body.theme-vela {
   .vela-flash__rail { align-items: flex-start; flex-direction: column; }
   .vela-lookbook__item,
   .vela-lookbook__item:nth-child(3n) { grid-column: span 12; min-height: 30rem; }
+  .vela-story { grid-template-columns: 1fr; }
+  .vela-story--reverse .vela-story__media { order: initial; }
+  .vela-story__media { min-height: 28rem; }
+  .vela-story__stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .theme-vela .s-block-tabs .tabs { overflow-x: auto; flex-wrap: nowrap; }
   .vela-faq { grid-template-columns: 1fr; }
   .vela-quick-view__grid { grid-template-columns: 1fr; }
   .vela-quick-view__media { min-height: 18rem; max-height: 42vh; }

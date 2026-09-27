@@ -12,6 +12,7 @@ class App extends AppHelpers {
 
   loadTheApp() {
     this.commonThings();
+    this.initColorMode();
     this.initiateNotifier();
     this.initiateMobileMenu();
     if (header_is_sticky) {
@@ -82,6 +83,42 @@ class App extends AppHelpers {
 
   commonThings() {
     this.cleanContentArticles('.content-entry');
+  }
+
+  initColorMode() {
+    if (!window.vela_dark_mode_enabled) return;
+
+    const buttons = document.querySelectorAll('[data-vela-theme-toggle]');
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const currentMode = () => document.documentElement.dataset.velaTheme === 'dark' ? 'dark' : 'light';
+    const updateButtons = () => {
+      const isDark = currentMode() === 'dark';
+      buttons.forEach(button => {
+        button.setAttribute('aria-pressed', String(isDark));
+        button.setAttribute('aria-label', isDark ? window.vela_i18n.lightMode : window.vela_i18n.darkMode);
+        const icon = button.querySelector('[data-vela-theme-icon]');
+        if (icon) icon.className = isDark ? 'sicon-sun' : 'sicon-moon';
+      });
+    };
+
+    buttons.forEach(button => button.addEventListener('click', () => {
+      const next = currentMode() === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.velaTheme = next;
+      try { localStorage.setItem('vela:color-mode', next); } catch (error) {}
+      updateButtons();
+    }));
+
+    media.addEventListener?.('change', event => {
+      let stored = null;
+      try { stored = localStorage.getItem('vela:color-mode'); } catch (error) {}
+      if (!stored) {
+        document.documentElement.dataset.velaTheme = event.matches ? 'dark' : 'light';
+        updateButtons();
+      }
+    });
+
+    updateButtons();
   }
 
   cleanContentArticles(elementsSelector) {

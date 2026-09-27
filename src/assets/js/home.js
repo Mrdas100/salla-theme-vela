@@ -6,6 +6,12 @@ window.fslightbox = Lightbox;
 class Home extends BasePage {
     onReady() {
         this.initFeaturedTabs();
+        this.respectReducedMotion();
+    }
+
+    respectReducedMotion() {
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        document.querySelectorAll('[data-vela-media-video]').forEach(video => video.pause());
     }
 
     /**
