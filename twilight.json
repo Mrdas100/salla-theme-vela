@@ -22,7 +22,8 @@
         "component-store-features",
         "component-youtube",
         "menu-images",
-        "filters"
+        "filters",
+        "component-random-testimonials"
     ],
     "settings": [
         {
@@ -79,11 +80,29 @@
             "label": "الوضع الافتراضي",
             "source": "Manual",
             "required": true,
-            "selected": [{"label": "حسب جهاز العميل", "value": "system", "key": "e6537a04-d81a-45b9-9b75-c6224d4140d7"}],
+            "selected": [
+                {
+                    "label": "حسب جهاز العميل",
+                    "value": "system",
+                    "key": "e6537a04-d81a-45b9-9b75-c6224d4140d7"
+                }
+            ],
             "options": [
-                {"label": "حسب جهاز العميل", "value": "system", "key": "e6537a04-d81a-45b9-9b75-c6224d4140d7"},
-                {"label": "فاتح", "value": "light", "key": "96010344-09f8-4cdd-9e03-4c26e43db17f"},
-                {"label": "داكن", "value": "dark", "key": "90d9b9df-bab5-43b3-b271-f9bb435309ff"}
+                {
+                    "label": "حسب جهاز العميل",
+                    "value": "system",
+                    "key": "e6537a04-d81a-45b9-9b75-c6224d4140d7"
+                },
+                {
+                    "label": "فاتح",
+                    "value": "light",
+                    "key": "96010344-09f8-4cdd-9e03-4c26e43db17f"
+                },
+                {
+                    "label": "داكن",
+                    "value": "dark",
+                    "key": "90d9b9df-bab5-43b3-b271-f9bb435309ff"
+                }
             ]
         },
         {
@@ -117,11 +136,29 @@
             "label": "استدارة الحواف",
             "source": "Manual",
             "required": true,
-            "selected": [{"label": "ناعمة", "value": "soft", "key": "d2c4a668-c2fd-4e4d-b875-b79782b159e1"}],
+            "selected": [
+                {
+                    "label": "ناعمة",
+                    "value": "soft",
+                    "key": "d2c4a668-c2fd-4e4d-b875-b79782b159e1"
+                }
+            ],
             "options": [
-                {"label": "مربعة", "value": "square", "key": "7d1990a5-f237-4b8d-a690-696421d9bdb0"},
-                {"label": "ناعمة", "value": "soft", "key": "d2c4a668-c2fd-4e4d-b875-b79782b159e1"},
-                {"label": "دائرية", "value": "rounded", "key": "02106414-8718-4207-910d-bc2c0e8e9cbc"}
+                {
+                    "label": "مربعة",
+                    "value": "square",
+                    "key": "7d1990a5-f237-4b8d-a690-696421d9bdb0"
+                },
+                {
+                    "label": "ناعمة",
+                    "value": "soft",
+                    "key": "d2c4a668-c2fd-4e4d-b875-b79782b159e1"
+                },
+                {
+                    "label": "دائرية",
+                    "value": "rounded",
+                    "key": "02106414-8718-4207-910d-bc2c0e8e9cbc"
+                }
             ]
         },
         {
@@ -131,11 +168,29 @@
             "label": "عرض المحتوى",
             "source": "Manual",
             "required": true,
-            "selected": [{"label": "قياسي", "value": "standard", "key": "17edc38d-45c3-46dc-9583-38c9e94ccbcf"}],
+            "selected": [
+                {
+                    "label": "قياسي",
+                    "value": "standard",
+                    "key": "17edc38d-45c3-46dc-9583-38c9e94ccbcf"
+                }
+            ],
             "options": [
-                {"label": "مدمج", "value": "compact", "key": "8ef91c89-ef25-41df-a26a-8401cecc4625"},
-                {"label": "قياسي", "value": "standard", "key": "17edc38d-45c3-46dc-9583-38c9e94ccbcf"},
-                {"label": "واسع", "value": "wide", "key": "b926f621-4f3c-460c-8821-f540234c9f94"}
+                {
+                    "label": "مدمج",
+                    "value": "compact",
+                    "key": "8ef91c89-ef25-41df-a26a-8401cecc4625"
+                },
+                {
+                    "label": "قياسي",
+                    "value": "standard",
+                    "key": "17edc38d-45c3-46dc-9583-38c9e94ccbcf"
+                },
+                {
+                    "label": "واسع",
+                    "value": "wide",
+                    "key": "b926f621-4f3c-460c-8821-f540234c9f94"
+                }
             ]
         },
         {
@@ -145,11 +200,29 @@
             "label": "المسافات بين الأقسام",
             "source": "Manual",
             "required": true,
-            "selected": [{"label": "مريحة", "value": "comfortable", "key": "520379a6-b917-42d6-b33c-8ed9e199de27"}],
+            "selected": [
+                {
+                    "label": "مريحة",
+                    "value": "comfortable",
+                    "key": "520379a6-b917-42d6-b33c-8ed9e199de27"
+                }
+            ],
             "options": [
-                {"label": "مدمجة", "value": "compact", "key": "b4a0cf47-cee2-47bb-bdbc-3ad5f30224b3"},
-                {"label": "مريحة", "value": "comfortable", "key": "520379a6-b917-42d6-b33c-8ed9e199de27"},
-                {"label": "هوائية", "value": "airy", "key": "d13975ef-3720-4297-9f07-60d999f96780"}
+                {
+                    "label": "مدمجة",
+                    "value": "compact",
+                    "key": "b4a0cf47-cee2-47bb-bdbc-3ad5f30224b3"
+                },
+                {
+                    "label": "مريحة",
+                    "value": "comfortable",
+                    "key": "520379a6-b917-42d6-b33c-8ed9e199de27"
+                },
+                {
+                    "label": "هوائية",
+                    "value": "airy",
+                    "key": "d13975ef-3720-4297-9f07-60d999f96780"
+                }
             ]
         },
         {
@@ -159,10 +232,24 @@
             "label": "نمط الهيدر",
             "source": "Manual",
             "required": true,
-            "selected": [{"label": "نظيف", "value": "clean", "key": "c97dc8c3-e091-4fe6-9e84-49bbd5afc2a4"}],
+            "selected": [
+                {
+                    "label": "نظيف",
+                    "value": "clean",
+                    "key": "c97dc8c3-e091-4fe6-9e84-49bbd5afc2a4"
+                }
+            ],
             "options": [
-                {"label": "نظيف", "value": "clean", "key": "c97dc8c3-e091-4fe6-9e84-49bbd5afc2a4"},
-                {"label": "عائم", "value": "floating", "key": "c3bdd01d-0785-4554-8083-f08d4709f174"}
+                {
+                    "label": "نظيف",
+                    "value": "clean",
+                    "key": "c97dc8c3-e091-4fe6-9e84-49bbd5afc2a4"
+                },
+                {
+                    "label": "عائم",
+                    "value": "floating",
+                    "key": "c3bdd01d-0785-4554-8083-f08d4709f174"
+                }
             ]
         },
         {
@@ -172,10 +259,24 @@
             "label": "نمط بطاقات المنتجات",
             "source": "Manual",
             "required": true,
-            "selected": [{"label": "تحريري", "value": "editorial", "key": "3c9000e2-9446-4a9e-ab6b-24c4acc3d03b"}],
+            "selected": [
+                {
+                    "label": "تحريري",
+                    "value": "editorial",
+                    "key": "3c9000e2-9446-4a9e-ab6b-24c4acc3d03b"
+                }
+            ],
             "options": [
-                {"label": "تحريري", "value": "editorial", "key": "3c9000e2-9446-4a9e-ab6b-24c4acc3d03b"},
-                {"label": "بسيط", "value": "minimal", "key": "e299444a-d0cc-402c-9943-a57921215a25"}
+                {
+                    "label": "تحريري",
+                    "value": "editorial",
+                    "key": "3c9000e2-9446-4a9e-ab6b-24c4acc3d03b"
+                },
+                {
+                    "label": "بسيط",
+                    "value": "minimal",
+                    "key": "e299444a-d0cc-402c-9943-a57921215a25"
+                }
             ]
         },
         {
@@ -1326,120 +1427,512 @@
         },
         {
             "key": "e8fd82e1-d8bb-495d-91c0-ddb9bbc7bddc",
-            "title": {"ar": "واجهة صورة أو فيديو — VELA", "en": "VELA Media Hero"},
+            "title": {
+                "ar": "واجهة صورة أو فيديو — VELA",
+                "en": "VELA Media Hero"
+            },
             "icon": "sicon-image-carousel",
             "path": "home.drop-hero",
             "is_default": true,
             "fields": [
                 {
-                    "id": "media_type", "type": "items", "format": "dropdown-list", "label": "نوع الواجهة", "source": "Manual", "required": true,
-                    "selected": [{"label": "صورة", "value": "image", "key": "9110bb66-48b5-4938-9cb8-c0a677570f15"}],
+                    "id": "media_type",
+                    "type": "items",
+                    "format": "dropdown-list",
+                    "label": "نوع الواجهة",
+                    "source": "Manual",
+                    "required": true,
+                    "selected": [
+                        {
+                            "label": "صورة",
+                            "value": "image",
+                            "key": "9110bb66-48b5-4938-9cb8-c0a677570f15"
+                        }
+                    ],
                     "options": [
-                        {"label": "صورة", "value": "image", "key": "9110bb66-48b5-4938-9cb8-c0a677570f15"},
-                        {"label": "فيديو مباشر MP4", "value": "video", "key": "a8376fba-b320-4e56-9a04-891b6771d98f"}
+                        {
+                            "label": "صورة",
+                            "value": "image",
+                            "key": "9110bb66-48b5-4938-9cb8-c0a677570f15"
+                        },
+                        {
+                            "label": "فيديو مباشر MP4",
+                            "value": "video",
+                            "key": "a8376fba-b320-4e56-9a04-891b6771d98f"
+                        }
                     ]
                 },
-                {"id": "image", "type": "string", "format": "image", "label": "صورة سطح المكتب أو غلاف الفيديو", "description": "المقاس المقترح 1600×900", "required": false},
-                {"id": "mobile_image", "type": "string", "format": "image", "label": "صورة الجوال", "description": "المقاس المقترح 750×1100", "required": false},
-                {"id": "video_url", "type": "string", "format": "text", "label": "رابط فيديو MP4 لسطح المكتب", "description": "استخدم ملفًا مضغوطًا وصامتًا قدر الإمكان", "required": false},
-                {"id": "mobile_video_url", "type": "string", "format": "text", "label": "رابط فيديو MP4 للجوال", "description": "اختياري؛ يستخدم فيديو سطح المكتب عند تركه فارغًا", "required": false},
-                {"id": "image_alt", "type": "string", "format": "text", "label": "وصف الصورة لقارئ الشاشة", "required": false, "maxLength": 160},
-                {"id": "eyebrow", "type": "string", "format": "text", "label": "النص العلوي", "multilanguage": true, "required": false, "maxLength": 50},
-                {"id": "title", "type": "string", "format": "text", "label": "العنوان", "multilanguage": true, "required": true, "maxLength": 90},
-                {"id": "description", "type": "string", "format": "textarea", "label": "الوصف", "multilanguage": true, "required": false, "maxLength": 220},
-                {"id": "primary_label", "type": "string", "format": "text", "label": "نص الزر الرئيسي", "multilanguage": true, "required": false, "maxLength": 40},
-                {"id": "primary_url", "type": "string", "format": "text", "label": "رابط الزر الرئيسي", "required": false},
-                {"id": "secondary_label", "type": "string", "format": "text", "label": "نص الزر الثانوي", "multilanguage": true, "required": false, "maxLength": 40},
-                {"id": "secondary_url", "type": "string", "format": "text", "label": "رابط الزر الثانوي", "required": false},
-                {"id": "overlay", "type": "number", "format": "integer", "label": "درجة تعتيم الصورة", "value": 45, "minimum": 0, "maximum": 85, "required": true},
                 {
-                    "id": "alignment", "type": "items", "format": "dropdown-list", "label": "محاذاة المحتوى", "source": "Manual", "required": true,
-                    "selected": [{"label": "البداية", "value": "start", "key": "decb29af-5b7f-442b-b2d4-0d488ef7bd29"}],
+                    "id": "image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "صورة سطح المكتب أو غلاف الفيديو",
+                    "description": "المقاس المقترح 1600×900",
+                    "required": false
+                },
+                {
+                    "id": "mobile_image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "صورة الجوال",
+                    "description": "المقاس المقترح 750×1100",
+                    "required": false
+                },
+                {
+                    "id": "video_url",
+                    "type": "string",
+                    "format": "text",
+                    "label": "رابط فيديو MP4 لسطح المكتب",
+                    "description": "استخدم ملفًا مضغوطًا وصامتًا قدر الإمكان",
+                    "required": false
+                },
+                {
+                    "id": "mobile_video_url",
+                    "type": "string",
+                    "format": "text",
+                    "label": "رابط فيديو MP4 للجوال",
+                    "description": "اختياري؛ يستخدم فيديو سطح المكتب عند تركه فارغًا",
+                    "required": false
+                },
+                {
+                    "id": "image_alt",
+                    "type": "string",
+                    "format": "text",
+                    "label": "وصف الصورة لقارئ الشاشة",
+                    "required": false,
+                    "maxLength": 160
+                },
+                {
+                    "id": "eyebrow",
+                    "type": "string",
+                    "format": "text",
+                    "label": "النص العلوي",
+                    "multilanguage": true,
+                    "required": false,
+                    "maxLength": 50
+                },
+                {
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "العنوان",
+                    "multilanguage": true,
+                    "required": true,
+                    "maxLength": 90
+                },
+                {
+                    "id": "description",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "الوصف",
+                    "multilanguage": true,
+                    "required": false,
+                    "maxLength": 220
+                },
+                {
+                    "id": "primary_label",
+                    "type": "string",
+                    "format": "text",
+                    "label": "نص الزر الرئيسي",
+                    "multilanguage": true,
+                    "required": false,
+                    "maxLength": 40
+                },
+                {
+                    "id": "primary_url",
+                    "type": "string",
+                    "format": "text",
+                    "label": "رابط الزر الرئيسي",
+                    "required": false
+                },
+                {
+                    "id": "secondary_label",
+                    "type": "string",
+                    "format": "text",
+                    "label": "نص الزر الثانوي",
+                    "multilanguage": true,
+                    "required": false,
+                    "maxLength": 40
+                },
+                {
+                    "id": "secondary_url",
+                    "type": "string",
+                    "format": "text",
+                    "label": "رابط الزر الثانوي",
+                    "required": false
+                },
+                {
+                    "id": "overlay",
+                    "type": "number",
+                    "format": "integer",
+                    "label": "درجة تعتيم الصورة",
+                    "value": 45,
+                    "minimum": 0,
+                    "maximum": 85,
+                    "required": true
+                },
+                {
+                    "id": "alignment",
+                    "type": "items",
+                    "format": "dropdown-list",
+                    "label": "محاذاة المحتوى",
+                    "source": "Manual",
+                    "required": true,
+                    "selected": [
+                        {
+                            "label": "البداية",
+                            "value": "start",
+                            "key": "decb29af-5b7f-442b-b2d4-0d488ef7bd29"
+                        }
+                    ],
                     "options": [
-                        {"label": "البداية", "value": "start", "key": "decb29af-5b7f-442b-b2d4-0d488ef7bd29"},
-                        {"label": "المنتصف", "value": "center", "key": "7afdb4dc-29f4-473d-a364-fce94920da92"}
+                        {
+                            "label": "البداية",
+                            "value": "start",
+                            "key": "decb29af-5b7f-442b-b2d4-0d488ef7bd29"
+                        },
+                        {
+                            "label": "المنتصف",
+                            "value": "center",
+                            "key": "7afdb4dc-29f4-473d-a364-fce94920da92"
+                        }
                     ]
                 }
             ]
         },
         {
             "key": "07b68168-a137-4264-a1e3-73019f7fdcc9",
-            "title": {"ar": "قصة العلامة — VELA", "en": "VELA Brand Story"},
+            "title": {
+                "ar": "قصة العلامة — VELA",
+                "en": "VELA Brand Story"
+            },
             "icon": "sicon-store",
             "path": "home.brand-story",
             "fields": [
-                {"id": "eyebrow", "type": "string", "format": "text", "label": "النص العلوي", "multilanguage": true, "required": false, "maxLength": 50},
-                {"id": "title", "type": "string", "format": "text", "label": "العنوان", "multilanguage": true, "required": true, "maxLength": 100},
-                {"id": "description", "type": "string", "format": "textarea", "label": "القصة", "multilanguage": true, "required": true, "maxLength": 700},
                 {
-                    "id": "media_type", "type": "items", "format": "dropdown-list", "label": "نوع الوسائط", "source": "Manual", "required": true,
-                    "selected": [{"label": "صورة", "value": "image", "key": "5beed52c-a084-45dd-bcff-0506d950d2d0"}],
+                    "id": "eyebrow",
+                    "type": "string",
+                    "format": "text",
+                    "label": "النص العلوي",
+                    "multilanguage": true,
+                    "required": false,
+                    "maxLength": 50
+                },
+                {
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "العنوان",
+                    "multilanguage": true,
+                    "required": true,
+                    "maxLength": 100
+                },
+                {
+                    "id": "description",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "القصة",
+                    "multilanguage": true,
+                    "required": true,
+                    "maxLength": 700
+                },
+                {
+                    "id": "media_type",
+                    "type": "items",
+                    "format": "dropdown-list",
+                    "label": "نوع الوسائط",
+                    "source": "Manual",
+                    "required": true,
+                    "selected": [
+                        {
+                            "label": "صورة",
+                            "value": "image",
+                            "key": "5beed52c-a084-45dd-bcff-0506d950d2d0"
+                        }
+                    ],
                     "options": [
-                        {"label": "صورة", "value": "image", "key": "5beed52c-a084-45dd-bcff-0506d950d2d0"},
-                        {"label": "فيديو مباشر MP4", "value": "video", "key": "8234290d-85dc-4c0d-b277-e5385e59803f"}
+                        {
+                            "label": "صورة",
+                            "value": "image",
+                            "key": "5beed52c-a084-45dd-bcff-0506d950d2d0"
+                        },
+                        {
+                            "label": "فيديو مباشر MP4",
+                            "value": "video",
+                            "key": "8234290d-85dc-4c0d-b277-e5385e59803f"
+                        }
                     ]
                 },
-                {"id": "image", "type": "string", "format": "image", "label": "الصورة أو غلاف الفيديو", "required": false},
-                {"id": "image_alt", "type": "string", "format": "text", "label": "وصف الصورة", "required": false, "maxLength": 160},
-                {"id": "video_url", "type": "string", "format": "text", "label": "رابط فيديو MP4", "required": false},
-                {"id": "button_label", "type": "string", "format": "text", "label": "نص الزر", "multilanguage": true, "required": false, "maxLength": 40},
-                {"id": "button_url", "type": "string", "format": "text", "label": "رابط الزر", "required": false},
-                {"id": "reverse", "type": "boolean", "format": "switch", "label": "عكس موضع الصورة والنص", "value": false, "selected": false},
                 {
-                    "id": "stats", "type": "collection", "format": "collection", "label": "أرقام الثقة", "item_label": "رقم", "required": false, "minLength": 0, "maxLength": 3,
+                    "id": "image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "الصورة أو غلاف الفيديو",
+                    "required": false
+                },
+                {
+                    "id": "image_alt",
+                    "type": "string",
+                    "format": "text",
+                    "label": "وصف الصورة",
+                    "required": false,
+                    "maxLength": 160
+                },
+                {
+                    "id": "video_url",
+                    "type": "string",
+                    "format": "text",
+                    "label": "رابط فيديو MP4",
+                    "required": false
+                },
+                {
+                    "id": "button_label",
+                    "type": "string",
+                    "format": "text",
+                    "label": "نص الزر",
+                    "multilanguage": true,
+                    "required": false,
+                    "maxLength": 40
+                },
+                {
+                    "id": "button_url",
+                    "type": "string",
+                    "format": "text",
+                    "label": "رابط الزر",
+                    "required": false
+                },
+                {
+                    "id": "reverse",
+                    "type": "boolean",
+                    "format": "switch",
+                    "label": "عكس موضع الصورة والنص",
+                    "value": false,
+                    "selected": false
+                },
+                {
+                    "id": "stats",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "أرقام الثقة",
+                    "item_label": "رقم",
+                    "required": false,
+                    "minLength": 0,
+                    "maxLength": 3,
                     "fields": [
-                        {"id": "stats.value", "type": "string", "format": "text", "label": "القيمة", "required": true, "maxLength": 20},
-                        {"id": "stats.label", "type": "string", "format": "text", "label": "الوصف", "multilanguage": true, "required": true, "maxLength": 50}
+                        {
+                            "id": "stats.value",
+                            "type": "string",
+                            "format": "text",
+                            "label": "القيمة",
+                            "required": true,
+                            "maxLength": 20
+                        },
+                        {
+                            "id": "stats.label",
+                            "type": "string",
+                            "format": "text",
+                            "label": "الوصف",
+                            "multilanguage": true,
+                            "required": true,
+                            "maxLength": 50
+                        }
                     ]
                 }
             ]
         },
         {
             "key": "482cc1a3-2227-4e7a-a521-29eaf804ccea",
-            "title": {"ar": "عرض خاطف — VELA", "en": "VELA Flash Sale"},
+            "title": {
+                "ar": "عرض خاطف — VELA",
+                "en": "VELA Flash Sale"
+            },
             "icon": "sicon-fire",
             "path": "home.flash-sale",
             "fields": [
-                {"id": "title", "type": "string", "format": "text", "label": "العنوان", "multilanguage": true, "required": true, "maxLength": 80},
-                {"id": "description", "type": "string", "format": "textarea", "label": "الوصف", "multilanguage": true, "required": false, "maxLength": 180},
-                {"id": "end_at", "type": "string", "format": "text", "label": "وقت نهاية العرض", "description": "مثال: Dec 31, 2026 23:59:59", "required": false},
-                {"id": "products", "type": "items", "format": "dropdown-list", "label": "منتجات العرض", "source": "products", "searchable": true, "multichoice": true, "selected": [], "options": [], "minLength": 1, "maxLength": 12, "required": true},
-                {"id": "display_all_url", "type": "string", "format": "text", "label": "رابط عرض الكل", "required": false}
+                {
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "العنوان",
+                    "multilanguage": true,
+                    "required": true,
+                    "maxLength": 80
+                },
+                {
+                    "id": "description",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "الوصف",
+                    "multilanguage": true,
+                    "required": false,
+                    "maxLength": 180
+                },
+                {
+                    "id": "end_at",
+                    "type": "string",
+                    "format": "text",
+                    "label": "وقت نهاية العرض",
+                    "description": "مثال: Dec 31, 2026 23:59:59",
+                    "required": false
+                },
+                {
+                    "id": "products",
+                    "type": "items",
+                    "format": "dropdown-list",
+                    "label": "منتجات العرض",
+                    "source": "products",
+                    "searchable": true,
+                    "multichoice": true,
+                    "selected": [],
+                    "options": [],
+                    "minLength": 1,
+                    "maxLength": 12,
+                    "required": true
+                },
+                {
+                    "id": "display_all_url",
+                    "type": "string",
+                    "format": "text",
+                    "label": "رابط عرض الكل",
+                    "required": false
+                }
             ]
         },
         {
             "key": "40dd00ea-f5f0-41e1-b3f6-73cb303939aa",
-            "title": {"ar": "لوحة الإطلالات — VELA", "en": "VELA Lookbook"},
+            "title": {
+                "ar": "لوحة الإطلالات — VELA",
+                "en": "VELA Lookbook"
+            },
             "icon": "sicon-layout-grid-rearrange",
             "path": "home.lookbook",
             "fields": [
-                {"id": "title", "type": "string", "format": "text", "label": "عنوان القسم", "multilanguage": true, "required": false, "maxLength": 80},
                 {
-                    "id": "banners", "type": "collection", "format": "collection", "label": "البانرات", "item_label": "بانر", "required": true, "minLength": 2, "maxLength": 4,
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "عنوان القسم",
+                    "multilanguage": true,
+                    "required": false,
+                    "maxLength": 80
+                },
+                {
+                    "id": "banners",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "البانرات",
+                    "item_label": "بانر",
+                    "required": true,
+                    "minLength": 2,
+                    "maxLength": 4,
                     "fields": [
-                        {"id": "banners.image", "type": "string", "format": "image", "label": "الصورة", "required": true},
-                        {"id": "banners.image_alt", "type": "string", "format": "text", "label": "وصف الصورة لقارئ الشاشة", "required": false, "maxLength": 160},
-                        {"id": "banners.title", "type": "string", "format": "text", "label": "العنوان", "multilanguage": true, "required": true, "maxLength": 70},
-                        {"id": "banners.description", "type": "string", "format": "text", "label": "النص المساند", "multilanguage": true, "required": false, "maxLength": 100},
-                        {"id": "banners.url", "type": "string", "format": "text", "label": "الرابط", "required": true}
+                        {
+                            "id": "banners.image",
+                            "type": "string",
+                            "format": "image",
+                            "label": "الصورة",
+                            "required": true
+                        },
+                        {
+                            "id": "banners.image_alt",
+                            "type": "string",
+                            "format": "text",
+                            "label": "وصف الصورة لقارئ الشاشة",
+                            "required": false,
+                            "maxLength": 160
+                        },
+                        {
+                            "id": "banners.title",
+                            "type": "string",
+                            "format": "text",
+                            "label": "العنوان",
+                            "multilanguage": true,
+                            "required": true,
+                            "maxLength": 70
+                        },
+                        {
+                            "id": "banners.description",
+                            "type": "string",
+                            "format": "text",
+                            "label": "النص المساند",
+                            "multilanguage": true,
+                            "required": false,
+                            "maxLength": 100
+                        },
+                        {
+                            "id": "banners.url",
+                            "type": "string",
+                            "format": "text",
+                            "label": "الرابط",
+                            "required": true
+                        }
                     ]
                 }
             ]
         },
         {
             "key": "8dbcf71c-3386-4da9-b7bd-6650589c3cd6",
-            "title": {"ar": "الأسئلة الشائعة — VELA", "en": "VELA FAQ"},
+            "title": {
+                "ar": "الأسئلة الشائعة — VELA",
+                "en": "VELA FAQ"
+            },
             "icon": "sicon-help",
             "path": "home.faq",
             "fields": [
-                {"id": "title", "type": "string", "format": "text", "label": "العنوان", "multilanguage": true, "required": true, "maxLength": 80},
-                {"id": "description", "type": "string", "format": "textarea", "label": "المقدمة", "multilanguage": true, "required": false, "maxLength": 220},
-                {"id": "open_first", "type": "boolean", "format": "switch", "label": "فتح السؤال الأول تلقائيًا", "value": false, "selected": false},
                 {
-                    "id": "items", "type": "collection", "format": "collection", "label": "الأسئلة", "item_label": "سؤال", "required": true, "minLength": 2, "maxLength": 12,
+                    "id": "title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "العنوان",
+                    "multilanguage": true,
+                    "required": true,
+                    "maxLength": 80
+                },
+                {
+                    "id": "description",
+                    "type": "string",
+                    "format": "textarea",
+                    "label": "المقدمة",
+                    "multilanguage": true,
+                    "required": false,
+                    "maxLength": 220
+                },
+                {
+                    "id": "open_first",
+                    "type": "boolean",
+                    "format": "switch",
+                    "label": "فتح السؤال الأول تلقائيًا",
+                    "value": false,
+                    "selected": false
+                },
+                {
+                    "id": "items",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "الأسئلة",
+                    "item_label": "سؤال",
+                    "required": true,
+                    "minLength": 2,
+                    "maxLength": 12,
                     "fields": [
-                        {"id": "items.question", "type": "string", "format": "text", "label": "السؤال", "multilanguage": true, "required": true, "maxLength": 140},
-                        {"id": "items.answer", "type": "string", "format": "textarea", "label": "الإجابة", "multilanguage": true, "required": true, "maxLength": 900}
+                        {
+                            "id": "items.question",
+                            "type": "string",
+                            "format": "text",
+                            "label": "السؤال",
+                            "multilanguage": true,
+                            "required": true,
+                            "maxLength": 140
+                        },
+                        {
+                            "id": "items.answer",
+                            "type": "string",
+                            "format": "textarea",
+                            "label": "الإجابة",
+                            "multilanguage": true,
+                            "required": true,
+                            "maxLength": 900
+                        }
                     ]
                 }
             ]
