@@ -1,0 +1,20 @@
+{% set heading = component.title is iterable ? component.title[language.code]|default(component.title|first) : component.title %}
+{% set intro = component.description is iterable ? component.description[language.code]|default(component.description|first) : component.description %}
+<section component-id="{{ componentId }}" class="s-block container vela-faq" aria-labelledby="vela-faq-title-{{ position }}">
+  <div class="vela-faq__intro">
+    <p class="vela-eyebrow">{{ trans('vela.need_help') }}</p>
+    <h2 id="vela-faq-title-{{ position }}">{{ heading }}</h2>
+    {% if intro %}<p>{{ intro }}</p>{% endif %}
+  </div>
+  <div class="vela-faq__items">
+    {% for item in component.items %}
+      {% set question = item.question is iterable ? item.question[language.code]|default(item.question|first) : item.question %}
+      {% set answer = item.answer is iterable ? item.answer[language.code]|default(item.answer|first) : item.answer %}
+      <details class="vela-faq__item" {% if loop.first and component.open_first %}open{% endif %}>
+        <summary><span>{{ question }}</span><i class="sicon-add" aria-hidden="true"></i></summary>
+        <div class="vela-faq__answer">{{ answer|raw }}</div>
+      </details>
+    {% endfor %}
+  </div>
+</section>
+

@@ -1,0 +1,338 @@
+/* VELA visual layer — isolated from the upstream Twilight baseline. */
+:root {
+  --vela-ink: #111310;
+  --vela-paper: #f5f3ee;
+  --vela-signal: #c8ff2e;
+  --vela-surface: #ffffff;
+  --vela-muted: #686b64;
+  --vela-border: rgba(17, 19, 16, 0.14);
+  --vela-radius: 14px;
+  --vela-section-space: clamp(3.5rem, 8vw, 7rem);
+  --vela-content: 1280px;
+  --vela-ease: cubic-bezier(.2, .75, .25, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body.theme-vela {
+  color: var(--vela-ink);
+  background: var(--vela-surface);
+  text-rendering: optimizeLegibility;
+}
+
+.theme-vela .container {
+  max-width: var(--vela-content);
+}
+
+.theme-vela :focus-visible {
+  outline: 3px solid var(--vela-signal);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px var(--vela-ink);
+}
+
+.vela-skip-link {
+  position: fixed;
+  inset-block-start: .75rem;
+  inset-inline-start: .75rem;
+  z-index: 9999;
+  transform: translateY(-160%);
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  color: #fff;
+  background: var(--vela-ink);
+  transition: transform 180ms var(--vela-ease);
+}
+
+.vela-skip-link:focus {
+  transform: translateY(0);
+}
+
+.theme-vela .s-block {
+  margin-block-start: var(--vela-section-space);
+}
+
+.theme-vela .s-block__title h2,
+.vela-section-title {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -.035em;
+}
+
+.vela-eyebrow {
+  margin-block-end: .75rem;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+/* Header and navigation */
+.theme-vela .top-navbar {
+  border-block-end: 1px solid var(--vela-border);
+  background: var(--vela-paper);
+}
+
+.theme-vela .main-nav-container {
+  border-block-end: 1px solid var(--vela-border);
+  box-shadow: none;
+}
+
+.theme-vela .navbar-brand img {
+  max-height: 3.25rem;
+  object-fit: contain;
+}
+
+.theme-vela.vela-header--floating .main-nav-container:not(.fixed-pinned) {
+  margin: .75rem auto 0;
+  width: min(calc(100% - 1.5rem), var(--vela-content));
+  border: 1px solid var(--vela-border);
+  border-radius: var(--vela-radius);
+}
+
+/* Hero */
+.vela-hero {
+  position: relative;
+  min-height: clamp(34rem, 74vh, 52rem);
+  display: grid;
+  overflow: hidden;
+  color: #fff;
+  background: var(--vela-ink);
+  isolation: isolate;
+}
+
+.vela-hero__media,
+.vela-hero__overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.vela-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vela-hero__overlay {
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(0, 0, 0, var(--vela-overlay, .45)), rgba(0, 0, 0, calc(var(--vela-overlay, .45) * .2)) 70%);
+}
+
+[dir="ltr"] .vela-hero__overlay {
+  background: linear-gradient(-90deg, rgba(0, 0, 0, var(--vela-overlay, .45)), rgba(0, 0, 0, calc(var(--vela-overlay, .45) * .2)) 70%);
+}
+
+.vela-hero__inner {
+  z-index: 2;
+  display: flex;
+  align-items: end;
+  padding-block: clamp(3rem, 8vw, 7rem);
+}
+
+.vela-hero--center .vela-hero__inner {
+  justify-content: center;
+  text-align: center;
+}
+
+.vela-hero__content {
+  max-width: 46rem;
+}
+
+.vela-hero h2 {
+  max-width: 13ch;
+  font-size: clamp(2.8rem, 7vw, 6.75rem);
+  font-weight: 900;
+  line-height: .94;
+  letter-spacing: -.06em;
+}
+
+.vela-hero--center h2 { margin-inline: auto; }
+
+.vela-hero__description {
+  max-width: 54ch;
+  margin-block-start: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.vela-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-block-start: 1.75rem;
+}
+
+.vela-hero--center .vela-hero__actions { justify-content: center; }
+
+.vela-button {
+  min-height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .75rem 1.25rem;
+  border: 1px solid currentColor;
+  border-radius: var(--vela-radius);
+  font-weight: 800;
+  transition: transform 180ms var(--vela-ease), background-color 180ms var(--vela-ease);
+}
+
+.vela-button:hover { transform: translateY(-2px); }
+.vela-button--signal { border-color: var(--vela-signal); color: var(--vela-ink); background: var(--vela-signal); }
+.vela-button--ghost { color: #fff; background: rgba(0, 0, 0, .18); backdrop-filter: blur(8px); }
+
+/* Campaign rail and product sections */
+.vela-flash {
+  padding: clamp(1rem, 3vw, 2rem);
+  border-radius: var(--vela-radius);
+  color: #fff;
+  background: var(--vela-ink);
+  overflow: hidden;
+}
+
+.vela-flash__rail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: clamp(1rem, 3vw, 2rem);
+  border-block-end: 1px solid rgba(255, 255, 255, .18);
+}
+
+.vela-flash__rail h2 { font-size: clamp(1.75rem, 4vw, 3.5rem); font-weight: 900; letter-spacing: -.04em; }
+.vela-flash salla-products-slider { display: block; margin-block-start: 1rem; color: var(--vela-ink); }
+
+.vela-lookbook__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.vela-lookbook__item {
+  position: relative;
+  grid-column: span 6;
+  min-height: clamp(24rem, 52vw, 42rem);
+  border-radius: var(--vela-radius);
+  overflow: hidden;
+  color: #fff;
+  background: var(--vela-ink);
+}
+
+.vela-lookbook__item:nth-child(3n) { grid-column: span 12; min-height: clamp(18rem, 35vw, 32rem); }
+.vela-lookbook__item img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms var(--vela-ease); }
+.vela-lookbook__item:hover img { transform: scale(1.025); }
+.vela-lookbook__shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.72), transparent 55%); }
+.vela-lookbook__copy { position: absolute; inset-inline: 1.5rem; inset-block-end: 1.5rem; display: grid; gap: .25rem; }
+.vela-lookbook__copy strong { font-size: clamp(1.5rem, 3vw, 2.6rem); font-weight: 900; }
+
+/* FAQ */
+.vela-faq {
+  display: grid;
+  grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  padding-block: var(--vela-section-space);
+  border-block: 1px solid var(--vela-border);
+}
+
+.vela-faq__intro h2 { font-size: clamp(2rem, 4vw, 3.75rem); font-weight: 900; line-height: 1; letter-spacing: -.045em; }
+.vela-faq__intro > p:last-child { max-width: 42ch; margin-block-start: 1rem; color: var(--vela-muted); line-height: 1.8; }
+.vela-faq__item { border-block-end: 1px solid var(--vela-border); }
+.vela-faq__item summary { min-height: 4rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; cursor: pointer; font-weight: 800; list-style: none; }
+.vela-faq__item summary::-webkit-details-marker { display: none; }
+.vela-faq__item summary i { transition: transform 180ms var(--vela-ease); }
+.vela-faq__item[open] summary i { transform: rotate(45deg); }
+.vela-faq__answer { padding-block: 0 1.5rem; color: var(--vela-muted); line-height: 1.8; }
+
+/* Product cards and quick view */
+.theme-vela .s-product-card-entry {
+  border: 1px solid var(--vela-border);
+  border-radius: var(--vela-radius);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.theme-vela.vela-cards--minimal .s-product-card-entry { border-color: transparent; background: transparent; }
+.theme-vela .s-product-card-image { background: var(--vela-paper); }
+.theme-vela .s-product-card-content-title { font-weight: 800; }
+
+.vela-quick-view-trigger {
+  position: absolute;
+  inset-inline-end: .75rem;
+  inset-block-end: .75rem;
+  z-index: 3;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--vela-border);
+  border-radius: 999px;
+  color: var(--vela-ink);
+  background: rgba(255, 255, 255, .92);
+  backdrop-filter: blur(8px);
+}
+
+.vela-quick-view {
+  width: min(56rem, calc(100% - 2rem));
+  max-height: min(42rem, calc(100vh - 2rem));
+  padding: 0;
+  border: 0;
+  border-radius: var(--vela-radius);
+  color: var(--vela-ink);
+  background: var(--vela-surface);
+  overflow: auto;
+}
+
+.vela-quick-view::backdrop { background: rgba(0, 0, 0, .68); backdrop-filter: blur(4px); }
+.vela-quick-view__grid { display: grid; grid-template-columns: 1fr 1fr; }
+.vela-quick-view__media { min-height: 28rem; background: var(--vela-paper); }
+.vela-quick-view__media img { width: 100%; height: 100%; object-fit: cover; }
+.vela-quick-view__content { position: relative; display: flex; flex-direction: column; justify-content: center; gap: 1rem; padding: clamp(1.5rem, 5vw, 4rem); }
+.vela-quick-view__content h2 { font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 900; line-height: 1.1; }
+.vela-quick-view__price { font-size: 1.25rem; font-weight: 800; }
+.vela-quick-view__close { position: absolute; inset-block-start: 1rem; inset-inline-end: 1rem; min-width: 2.75rem; min-height: 2.75rem; border-radius: 999px; background: var(--vela-paper); }
+.vela-quick-view__actions { display: grid; gap: .75rem; }
+
+/* Category and product detail */
+.vela-category-hero {
+  position: relative;
+  min-height: clamp(16rem, 34vw, 32rem);
+  margin-block-end: clamp(2rem, 5vw, 4rem);
+  border-radius: var(--vela-radius);
+  overflow: hidden;
+  color: #fff;
+  background: var(--vela-ink);
+}
+
+.vela-category-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.vela-category-hero__shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.68), transparent 68%); }
+.vela-category-hero__copy { position: absolute; inset-inline: clamp(1.25rem, 4vw, 3rem); inset-block-end: clamp(1.25rem, 4vw, 3rem); }
+.vela-category-hero__copy > p:last-child { font-size: clamp(2rem, 5vw, 4.5rem); font-weight: 900; letter-spacing: -.05em; }
+.theme-vela .container--products-list { align-items: stretch; }
+.theme-vela .main-content > div:first-child { padding-block-end: 1rem; border-block-end: 1px solid var(--vela-border); }
+.theme-vela .product-entry { border-radius: var(--vela-radius); }
+.theme-vela .sticky-product-bar { border: 1px solid var(--vela-border); box-shadow: 0 16px 40px rgba(17, 19, 16, .08); }
+.vela-recently-viewed { margin-block: var(--vela-section-space) 2rem; }
+.vela-recently-viewed salla-products-slider { display: block; margin-block-start: 1.5rem; }
+
+/* Footer */
+.theme-vela .store-footer { margin-block-start: var(--vela-section-space); }
+.theme-vela .store-footer__inner { padding-block: clamp(3rem, 7vw, 6rem); }
+.theme-vela.footer-is-dark .store-footer__inner { background: var(--vela-ink); }
+
+@media (max-width: 767px) {
+  .vela-hero { min-height: 38rem; }
+  .vela-hero__inner { align-items: end; }
+  .vela-hero h2 { font-size: clamp(2.75rem, 14vw, 4.5rem); }
+  .vela-flash__rail { align-items: flex-start; flex-direction: column; }
+  .vela-lookbook__item,
+  .vela-lookbook__item:nth-child(3n) { grid-column: span 12; min-height: 30rem; }
+  .vela-faq { grid-template-columns: 1fr; }
+  .vela-quick-view__grid { grid-template-columns: 1fr; }
+  .vela-quick-view__media { min-height: 18rem; max-height: 42vh; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

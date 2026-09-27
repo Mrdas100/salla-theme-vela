@@ -1,0 +1,25 @@
+{% set title = component.title is iterable ? component.title[language.code]|default(component.title|first) : component.title %}
+{% set description = component.description is iterable ? component.description[language.code]|default(component.description|first) : component.description %}
+
+<section component-id="{{ componentId }}" class="s-block container vela-flash" aria-labelledby="vela-flash-title-{{ position }}">
+  <div class="vela-flash__rail">
+    <div>
+      <p class="vela-eyebrow">{{ trans('vela.limited_drop') }}</p>
+      <h2 id="vela-flash-title-{{ position }}">{{ title }}</h2>
+      {% if description %}<p>{{ description }}</p>{% endif %}
+    </div>
+    {% if component.end_at %}
+      <salla-count-down date="{{ component.end_at }}" boxed labeled></salla-count-down>
+    {% endif %}
+  </div>
+  {% if component.products|length %}
+    <salla-products-slider
+      source="selected"
+      source-value="[{{ component.products|map(product => product.id)|join(',') }}]"
+      block-title=" "
+      slider-id="vela-flash-{{ position }}"
+      {% if component.display_all_url %}display-all-url="{{ component.display_all_url }}"{% endif %}>
+    </salla-products-slider>
+  {% endif %}
+</section>
+

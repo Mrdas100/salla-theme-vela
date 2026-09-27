@@ -1,0 +1,26 @@
+{# VELA campaign hero. Content is merchant-managed in twilight.json. #}
+{% set title = component.title is iterable ? component.title[language.code]|default(component.title|first) : component.title %}
+{% set description = component.description is iterable ? component.description[language.code]|default(component.description|first) : component.description %}
+{% set eyebrow = component.eyebrow is iterable ? component.eyebrow[language.code]|default(component.eyebrow|first) : component.eyebrow %}
+{% set primary_label = component.primary_label is iterable ? component.primary_label[language.code]|default(component.primary_label|first) : component.primary_label %}
+{% set secondary_label = component.secondary_label is iterable ? component.secondary_label[language.code]|default(component.secondary_label|first) : component.secondary_label %}
+
+<section component-id="{{ componentId }}" class="vela-hero vela-hero--{{ component.alignment|default('start') }}" aria-labelledby="vela-hero-title-{{ position }}">
+  <picture class="vela-hero__media">
+    {% if component.mobile_image %}<source media="(max-width: 639px)" srcset="{{ component.mobile_image }}">{% endif %}
+    <img src="{{ component.image }}" alt="{{ component.image_alt|default(title)|e('html_attr') }}" width="1600" height="900" fetchpriority="high">
+  </picture>
+  <div class="vela-hero__overlay" style="--vela-overlay: {{ component.overlay|default(45) / 100 }}"></div>
+  <div class="container vela-hero__inner">
+    <div class="vela-hero__content">
+      {% if eyebrow %}<p class="vela-eyebrow">{{ eyebrow }}</p>{% endif %}
+      <h2 id="vela-hero-title-{{ position }}">{{ title }}</h2>
+      {% if description %}<p class="vela-hero__description">{{ description }}</p>{% endif %}
+      <div class="vela-hero__actions">
+        {% if component.primary_url and primary_label %}<a class="vela-button vela-button--signal" href="{{ component.primary_url }}">{{ primary_label }}</a>{% endif %}
+        {% if component.secondary_url and secondary_label %}<a class="vela-button vela-button--ghost" href="{{ component.secondary_url }}">{{ secondary_label }}</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,21 @@
+{% set heading = component.title is iterable ? component.title[language.code]|default(component.title|first) : component.title %}
+<section component-id="{{ componentId }}" class="s-block container vela-lookbook" aria-labelledby="vela-lookbook-title-{{ position }}">
+  {% if heading %}
+    <div class="s-block__title"><div class="right-side"><h2 id="vela-lookbook-title-{{ position }}">{{ heading }}</h2></div></div>
+  {% endif %}
+  <div class="vela-lookbook__grid vela-lookbook__grid--{{ component.banners|length }}">
+    {% for banner in component.banners %}
+      {% set banner_title = banner.title is iterable ? banner.title[language.code]|default(banner.title|first) : banner.title %}
+      {% set banner_text = banner.description is iterable ? banner.description[language.code]|default(banner.description|first) : banner.description %}
+      <a class="vela-lookbook__item" href="{{ banner.url }}" aria-label="{{ banner_title|e('html_attr') }}">
+        <img src="{{ banner.image }}" alt="{{ banner.image_alt|default(banner_title)|e('html_attr') }}" width="900" height="1100" loading="lazy">
+        <span class="vela-lookbook__shade"></span>
+        <span class="vela-lookbook__copy">
+          <strong>{{ banner_title }}</strong>
+          {% if banner_text %}<span>{{ banner_text }}</span>{% endif %}
+        </span>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
