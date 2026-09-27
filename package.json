@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-studio/salla-theme-vela.git"
+    "url": "git+https://github.com/Mrdas100/salla-theme-vela.git"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
